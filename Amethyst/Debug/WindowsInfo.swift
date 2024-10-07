@@ -41,13 +41,11 @@ struct Windows: ParsableCommand {
         for application in applications where includeUnmanaged || application.isManageable == .manageable {
             let app = SIApplication(runningApplication: application)
             print("\(app.title() ?? "<no title>") (pid \(app.pid()))")
-            /*
             for window in app.windows() {
                 let axWindow = AXWindow(element: window)!
                 print(axWindow.debugInfo(redactTitles: redactWindowTitles))
                 print("")
             }
-             */
         }
     }
 }

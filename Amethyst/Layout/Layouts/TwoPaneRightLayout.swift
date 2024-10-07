@@ -75,14 +75,14 @@ class TwoPaneRightLayout<Window: WindowType>: Layout<Window>, PanedLayout {
 
             if isMain {
                 scaleFactor = screenFrame.size.width / mainPaneWindowWidth
-                windowFrame.origin.x = screenFrame.origin.x + (isHorizontal ? mainPaneWindowWidth : 0)
-                windowFrame.origin.y = screenFrame.origin.y + (isHorizontal ? 0 : mainPaneWindowHeight)
+                windowFrame.origin.x = screenFrame.origin.x + (isHorizontal ? secondaryPaneWindowWidth : 0)
+                windowFrame.origin.y = screenFrame.origin.y
                 windowFrame.size.width = mainPaneWindowWidth
                 windowFrame.size.height = mainPaneWindowHeight
             } else {
                 scaleFactor = screenFrame.size.width / secondaryPaneWindowWidth
                 windowFrame.origin.x = screenFrame.origin.x
-                windowFrame.origin.y = screenFrame.origin.y
+                windowFrame.origin.y = screenFrame.origin.y + (isHorizontal ? 0 : mainPaneWindowHeight)
                 windowFrame.size.width = secondaryPaneWindowWidth
                 windowFrame.size.height = secondaryPaneWindowHeight
             }
